@@ -1,0 +1,15 @@
+<h3>List of Songs</h3>
+
+<table>
+<tbody>
+<% @songs.each do |song| %>
+<tr>
+<td> <p> Title: <%= song.title %></p><br> </td>
+<td> <p> Released Year: <%= song.release_year %></p><br> </td>
+<td> <p> Artist: <%= song.artist_name %></p><br> </td>
+<td> <p> Genre: <%= song.genre %></p><br> </td>
+<td><p>  <%= link_to "Delete", { action: :destroy, id: song.id }, method: :delete, data: {confirm: 'Are you sure?'} %> </p><br> </td>
+</tr>
+<% end %>
+</tbody>
+</table>
